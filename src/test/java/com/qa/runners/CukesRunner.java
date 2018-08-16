@@ -17,7 +17,7 @@ import cucumber.api.junit.Cucumber;
 		tags="@temp",
 		features= {"src/test/resources/com/fetures"},
 		glue= 
-			"src\\test\\java\\com\\qa\\step_definitions"	
+			"com/qa/step_definitions"	
 		
 		//,dryRun=false
 		

@@ -13,10 +13,10 @@ public class LoginPage {
 	}
 	
 	
-	@FindBy(xpath="//input[@class='input ng-dirty ng-valid ng-touched']")
+	@FindBy(xpath="//input[@name='email']")
 	public WebElement userNameField;
 	
-	@FindBy(xpath="//input[@class='input ng-dirty ng-touched ng-invalid']")
+	@FindBy(xpath="//input[@name='password']")
 	public WebElement passField;
 	
 	@FindBy(xpath="//button[.='sign in']")

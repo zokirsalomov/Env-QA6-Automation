@@ -57,7 +57,7 @@ public class HomePage {
 	@FindBy(xpath="//span[.='ocean view']")
 	public WebElement oceanView;
 	
-	@FindBy(xpath="//span[.='kuzzat's cave']")
+	@FindBy(xpath="//div[@id='kuzzat_cave-121']/*")
 	public WebElement kuzzatsCave;
 	
 	@FindBy(xpath="//div[@class='main-wrap center-vertically container']//a[1]")

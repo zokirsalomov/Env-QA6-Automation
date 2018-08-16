@@ -10,12 +10,16 @@ import org.openqa.selenium.WebElement;
 
 import com.qa.pages.HomePage;
 import com.qa.pages.LoginPage;
+import com.qa.utilities.BrowserUtils;
 import com.qa.utilities.Driver;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import static com.qa.utilities.ConfigurationReader.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class HomePageStepDef {
 	
@@ -41,18 +45,10 @@ public class HomePageStepDef {
 	@Then("user should see map and following links:")
 	public void user_should_see_map_and_following_links(List<String> rooms) {
 		
-		rooms.sort((r1, r2) -> r1.compareTo(r2));
-		
-		List<String> linkTexts = new ArrayList<>();
-		
-		for (int i=0; i<homePage.listOfRooms().size(); i++) {
-			linkTexts.add(homePage.listOfRooms().get(i).getText());
+		BrowserUtils.waitFor(3);
+		for(int i=0; i<homePage.listOfRooms().size(); i++) {
+			assertTrue(homePage.listOfRooms().get(i).isDisplayed());
 		}
-	    
-		linkTexts.sort((l1, l2) -> l1.compareTo(l2));
-		
-		System.out.println(rooms);
-		System.out.println(linkTexts);
 	}
 	
 	
