@@ -1,6 +1,6 @@
 Feature: Test Login functionality
 
-@temp
+
 Scenario Outline: Login functionality
     Given the user goes to the home page
     When User loges in using username "<username>" and password "<password>"

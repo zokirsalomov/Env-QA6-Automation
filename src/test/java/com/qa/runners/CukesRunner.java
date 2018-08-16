@@ -19,7 +19,7 @@ import cucumber.api.junit.Cucumber;
 		glue= 
 			"com/qa/step_definitions"	
 		
-		//,dryRun=false
+		,dryRun=false
 		
 		)
 public class CukesRunner {

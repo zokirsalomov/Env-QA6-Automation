@@ -23,15 +23,13 @@ import static org.junit.Assert.assertTrue;
 
 public class HomePageStepDef {
 	
-	public WebDriver driver;
+	//public WebDriver driver;
 	LoginPage loginPage = new LoginPage();
 	HomePage homePage = new HomePage();
 	
 	@Given("the user goes to the home page")
 	public void the_user_goes_to_the_home_page() {
-		driver = Driver.getDriver();
 		
-		driver.get(getProperty("url"));
 	}
 
 	@When("User loges in using username {string} and password {string}")
