@@ -1,8 +1,6 @@
 package com.qa.step_definitions;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -18,10 +16,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import static com.qa.utilities.ConfigurationReader.*;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertTrue;
 
-public class HomePageStepDef {
+public class LoginFunctionStepDef {
 	
 	//public WebDriver driver;
 	LoginPage loginPage = new LoginPage();
@@ -47,6 +44,39 @@ public class HomePageStepDef {
 		for(int i=0; i<homePage.listOfRooms().size(); i++) {
 			assertTrue(homePage.listOfRooms().get(i).isDisplayed());
 		}
+	}
+	
+	
+	@When("user enters invalid username {string} and {string}")
+	public void user_enters_invalid_username_and(String string, String string2) {
+		loginPage.userNameField.sendKeys(string);
+	    loginPage.passField.sendKeys(string2);
+	    loginPage.signInButton.click();
+	}
+
+	@Then("System should display {string} message")
+	public void system_should_display_message(String string) {
+	    if(loginPage.invUserMsg.isDisplayed()) {
+	    	BrowserUtils.waitFor(1);
+	    	System.out.println("expected: "+loginPage.invUserMsg.getText());
+	    	System.out.println("but found: " + string);
+	    	assertEquals(loginPage.invUserMsg.getText(), string);
+	    }
+	}
+
+	@When("User enters valid username {string} and invalid password {string}")
+	public void user_enters_valid_username_and_invalid_password(String string, String string2) {
+		loginPage.userNameField.sendKeys(string);
+	    loginPage.passField.sendKeys(string2);
+	    loginPage.signInButton.click();
+	}
+
+	@Then("System should display error {string} message")
+	public void system_should_display_error_message(String string) {
+	    if(loginPage.invPassMsg.isDisplayed()) {
+	    	BrowserUtils.waitFor(1);
+	    	assertEquals(loginPage.invPassMsg.getText(), string);
+	    }
 	}
 	
 	

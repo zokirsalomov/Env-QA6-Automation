@@ -23,5 +23,10 @@ public class LoginPage {
 	public WebElement signInButton;
 	
 	
+	@FindBy(xpath="//div[@class='cdk-live-announcer-element cdk-visually-hidden']")
+	public WebElement invUserMsg;
+	
+	@FindBy(xpath="//div[@class='cdk-live-announcer-element cdk-visually-hidden']")
+	public WebElement invPassMsg;
 	
 }

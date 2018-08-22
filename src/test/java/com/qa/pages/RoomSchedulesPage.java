@@ -9,9 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.qa.utilities.Driver;
 
-public class KilimanjaroPage {
+public class RoomSchedulesPage {
 
-	public KilimanjaroPage() {
+	public RoomSchedulesPage() {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 	
@@ -21,7 +21,7 @@ public class KilimanjaroPage {
 	
 	public List<WebElement> getAvailableTime(int dayFromToday){
 		String xpath = "//table[@class='card table is-fullwidth is-transparent borderless']/tbody/tr["+
-							dayFromToday+"]//td";
+							(dayFromToday+1)+"]//td";
 		
 		return Driver.getDriver().findElements(By.xpath(xpath));
 	}
@@ -41,6 +41,8 @@ public class KilimanjaroPage {
 	@FindBy(xpath="//table[@class='card table is-fullwidth is-transparent borderless']")
 	public WebElement scheduleTable;
 	
+	@FindBy(tagName="mat-dialog-container")
+	public WebElement confTable;
 	
 	
 //	@FindBy(xpath="//table[@class='card table is-fullwidth is-transparent borderless']/tbody/tr[1]//td")

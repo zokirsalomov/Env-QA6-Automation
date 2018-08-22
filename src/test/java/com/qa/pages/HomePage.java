@@ -84,16 +84,17 @@ public class HomePage {
 			ls.add(denali);
 			ls.add(halfDome);
 			ls.add(kilimanjaro);
-			ls.add(kuzzatsCave);
-			ls.add(oceanView);
-			ls.add(fourStay);
-			ls.add(studyArea);
-			ls.add(lobby);
-			ls.add(kitchen);
-			ls.add(buildingsMap);
+			//ls.add(kuzzatsCave);
+			//ls.add(oceanView);
+			//ls.add(fourStay);
+			//ls.add(studyArea);
+			//ls.add(lobby);
+			//ls.add(kitchen);
+			//ls.add(buildingsMap);
 			
 		return ls;
 	}
+	
 	
 	
 	
