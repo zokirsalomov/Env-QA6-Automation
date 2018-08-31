@@ -3,7 +3,7 @@ Feature: Test Room schedules
 Background: 
 	Given user logs in with valid credentials
 
-@temp
+
 Scenario Outline: Scheduled rooms
     When user clicks on "<room>"
     Then user should see booked daily schedule for selected "<room>"
