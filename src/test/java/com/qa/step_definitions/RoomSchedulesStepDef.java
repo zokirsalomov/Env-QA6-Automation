@@ -9,7 +9,7 @@ import com.qa.utilities.BrowserUtils;
 import com.qa.utilities.Driver;
 
 import static com.qa.utilities.ConfigurationReader.*;
-import static org.testng.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
